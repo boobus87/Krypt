@@ -7,8 +7,10 @@ from PyQt5.QtWidgets import (
     QMainWindow,
     QPushButton,
     QVBoxLayout,
-    QWidget,
+    QWidget
 )
+
+from PyQt5.QtGui import QIcon
 
 from pandas_model import *
 
@@ -23,6 +25,7 @@ class Vault(QWidget):
         super().__init__()
         self.setWindowTitle("Krypt - Password Vault")
         self.setGeometry(200, 100, 400, 150)
+        self.setWindowIcon(QIcon('icon.png'))
         
         layout = QVBoxLayout()
         self.table_view = QtWidgets.QTableView(self)

@@ -7,6 +7,8 @@ from PyQt5.QtWidgets import (
 )
 from PyQt5.QtCore import Qt
 
+from PyQt5.QtGui import QIcon
+
 from generate import PlaintextGenerator
 from encrypt import CryptoEngine
 from vault import Vault
@@ -19,6 +21,7 @@ class Gui(QWidget):
     def init_ui(self):
         self.setWindowTitle("Krypt")
         self.setGeometry(100, 100, 400, 150)
+        self.setWindowIcon(QIcon('icon.png'))
         self.crypto_engine = CryptoEngine(self)
         
         try:
