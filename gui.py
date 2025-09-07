@@ -6,6 +6,7 @@ from PyQt5.QtWidgets import (
     QVBoxLayout, QHBoxLayout, QMessageBox, QSpinBox, QMainWindow
 )
 from PyQt5.QtCore import Qt
+from PyQt5.QtGui import QPixmap
 
 from PyQt5.QtGui import QIcon
 
@@ -30,6 +31,10 @@ class Gui(QWidget):
         	self.key = self.crypto_engine.generate_key()
         	
         self.vault_window = Vault(self)
+        
+        top_gfx = QLabel()
+        pixmap = QPixmap('top_bar_gfx.png')
+        top_gfx.setPixmap(pixmap)
 
         # Label and spinbox for password length
         length_label = QLabel("Password Length:")
@@ -69,6 +74,7 @@ class Gui(QWidget):
 
         # Layout setup
         main_layout = QVBoxLayout()
+        main_layout.addWidget(top_gfx)
         main_layout.addLayout(length_layout)
         main_layout.addWidget(generate_btn)
         main_layout.addWidget(self.password_display)

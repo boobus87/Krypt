@@ -42,4 +42,12 @@ class Vault(QWidget):
     	df = pd.read_csv('data/secrets.csv')
     	model = PandasModel(df)
     	self.table_view.setModel(model)
-
+    	
+    def lookup_site(self):
+    	pass
+    	
+    def lookup_user(self):
+    	pass
+    	
+    def delete_entry(self):
+    	pass
